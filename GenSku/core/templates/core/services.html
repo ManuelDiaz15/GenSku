@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block content %}
+<script src="{% static 'js/popup.js' %}"></script>
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-5">
+            <span class="section-heading-upper">Gestión de servicios</span>
+          </h2>
+          <div class="row mb-5">
+            <div class="col-md-4">
+              <a class="btn btn-primary-create btn-xl" href="{% url 'create_sku' %}">Crear</a>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-primary-update btn-xl">Actualizar</button>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-primary-delete btn-xl">Eliminar</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

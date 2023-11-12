@@ -1,0 +1,81 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Crear SKU{% endblock %}
+
+{% block content %}
+<script src="{% static 'core/js/popup/popup.js' %}"></script>
+
+<!-- Mensaje que desaparece después de 10 segundos -->
+<div id="procedimientoDiv">
+  <section class="page-section cta">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <span class="section-heading-upper">Recuerda comprobar si anteriormente esta registrado el SKU</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-5">
+            <span class="section-heading-upper">Ingresa los Datos</span>
+          </h2>
+          <div class="row mb-5">
+            <div class="col-md-4">
+                <form>
+                  <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" class="form-control" id="marca" name="marca" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <input type="text" class="form-control" id="categoria" name="categoria" required>
+                  </div>
+              
+                  <div class="form-group">
+                    <label>Selecciona una opción:</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="unidadesCheck" name="unidadesCheck" onclick="toggleCheckbox('unidadesCheck', 'pesoCheck', 'unidades', 'peso')">
+                        <label class="form-check-label" for="unidadesCheck">Unidades</label>
+                        <input type="text" name="unidades" id="unidades" placeholder="Cantidad de unidades" disabled>
+                    </div>
+                
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="pesoCheck" name="pesoCheck" onclick="toggleCheckbox('pesoCheck', 'unidadesCheck', 'peso', 'unidades')">
+                        <label class="form-check-label" for="pesoCheck">Peso</label>
+                        <input type="text" name="peso" id="peso" placeholder="Peso" disabled>
+                    </div>
+                </div>
+              
+                  <button type="submit" class="btn btn-primary">Generar SKU</button>
+                </form>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  
+  
+  
+  
+
+{% endblock %}
