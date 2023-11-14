@@ -1,10 +1,23 @@
 body {
   font-family: 'Lora';
+  position: relative; /* Añadido para posicionar correctamente el pseudo-elemento */
+}
+
+body::before {
+  content: "";
+  position: fixed; /* Cambiado a fixed para cubrir toda la ventana */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(rgba(66, 171, 73, 0.37), rgba(66, 171, 73, 0.37)), url("../img/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  filter: blur(3px); /* Ajusta el valor de desenfoque según sea necesario */
+  z-index: -1; /* Coloca el pseudo-elemento detrás del contenido del body */
 }
+
 
 h1,
 h2,
