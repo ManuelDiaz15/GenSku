@@ -30,7 +30,8 @@
           </h2>
           <div class="row mb-5">
             <div class="col-md-6">
-              <form>
+              <form method="post" action="{% url 'create_sku' %}">
+                {% csrf_token %}
                 <div class="form-group">
                   <label for="marca">Marca:</label>
                   <input type="text" class="form-control" id="marca" name="marca" required>
@@ -53,14 +54,14 @@
                   <label>Ingresa el Valor:</label>
                   <input type="number" class="form-control" id="unikg" name="unikg" required placeholder="Ingresa el valor numérico" min="1">
                 </div>
-                <button type="submit" class="btn btn-primary">GENERAR</button>
+                <button type="submit" class="btn btn-primary" id="btn-generar">GENERAR</button>
               </form>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                 </div>
                 <label for="skugen">SKU GENERADO</label>
-                <input type="text" class="form-control" id="skugen" name="skugen" required>
+                <input type="text" class="form-control" id="skugen" name="skugen" value="{{ sku }}" required readonly>
             </div>
           </div>
         </div>
