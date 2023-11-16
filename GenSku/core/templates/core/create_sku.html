@@ -47,24 +47,22 @@
                 </div>
                 <div class="form-group">
                   <label>Selecciona una opción:</label>
-                  <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="opcionUnidades" name="opcionUnidades" value="unidades">
-                      <label class="form-check-label" for="opcionUnidades">Valor en Unidades</label>
-                  </div>
-                  <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="opcionPeso" name="opcionPeso" value="peso">
-                      <label class="form-check-label" for="opcionPeso">Valor en KG</label>
-                  </div>
+                  <br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="opcionUnidades" name="opcionUnidades" value="unidades">
+                    <label class="form-check-label" for="opcionUnidades">Valor en UNI</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="opcionPeso" name="opcionPeso" value="peso">
+                    <label class="form-check-label" for="opcionPeso">Valor en KG</label>
+                </div>
                   <label>Ingresa el Valor:</label>
-                  <input type="number" class="form-control" id="unikg" name="unikg" required placeholder="Ingresa el valor numérico" min="1">
+                  <input type="number" class="form-control" id="unikg" name="unikg" required placeholder="Ingresa el valor numérico" min="1" oninput="validarNumero(this)">
               </div>
-              
                 <button type="submit" class="btn btn-primary" id="btn-generar">GENERAR</button>
               </form>
               </div>
               <div class="col-md-6">
-                <div class="form-group">
-                </div>
                 <label for="skugen">SKU GENERADO</label>
                 <input type="text" class="form-control" id="skugen" name="skugen" value="{{ sku }}" required readonly>
             </div>
