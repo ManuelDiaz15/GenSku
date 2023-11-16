@@ -11,12 +11,6 @@ def services(request):
 def history(request):
     return render (request, "core/history.html")
 
-from django.shortcuts import render, HttpResponse
-
-from django.shortcuts import render, HttpResponse
-
-from django.shortcuts import render, HttpResponse
-
 def create_sku(request):
     if request.method == 'POST':
         # Obtener los datos del formulario

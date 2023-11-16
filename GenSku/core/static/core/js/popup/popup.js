@@ -20,3 +20,22 @@ function validarNumero(input) {
         mensajeError.innerHTML = "";
     }
 }
+
+function validarFormulario() {
+    var marca = document.getElementById("marca").value;
+    var nombre = document.getElementById("nombre").value;
+    var categoria = document.getElementById("categoria").value;
+    var opcionUnidades = document.getElementById("opcionUnidades").checked;
+    var opcionPeso = document.getElementById("opcionPeso").checked;
+    var unikg = document.getElementById("unikg").value;
+
+    if (marca === "" || nombre === "" || categoria === "" || (!opcionUnidades && !opcionPeso) || unikg === "") {
+      alert("Por favor, completa todos los campos.");
+    } else {
+      document.getElementById("skuForm").submit();
+    }
+  }
+
+  function validarNumero(input) {
+    // Puedes agregar lógica de validación específica para el campo numérico si es necesario.
+  }

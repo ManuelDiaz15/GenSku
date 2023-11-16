@@ -30,7 +30,7 @@
           </h2>
           <div class="row mb-5">
             <div class="col-md-6">
-              <form method="post" action="{% url 'create_sku' %}">
+              <form id="skuForm" method="post" action="{% url 'create_sku' %}">
                 {% csrf_token %}
                 <div class="form-group">
                   <label for="marca">Marca:</label>
@@ -51,20 +51,20 @@
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="opcionUnidades" name="opcionUnidades" value="unidades">
                     <label class="form-check-label" for="opcionUnidades">Valor en UNI</label>
-                </div>
-                <div class="form-check form-check-inline">
+                  </div>
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="opcionPeso" name="opcionPeso" value="peso">
                     <label class="form-check-label" for="opcionPeso">Valor en KG</label>
-                </div>
+                  </div>
                   <label>Ingresa el Valor:</label>
                   <input type="number" class="form-control" id="unikg" name="unikg" required placeholder="Ingresa el valor numérico" min="1" oninput="validarNumero(this)">
-              </div>
-                <button type="submit" class="btn btn-primary" id="btn-generar">GENERAR</button>
+                </div>
+                <button type="button" class="btn btn-primary" id="btn-generar" onclick="validarFormulario()">GENERAR</button>
               </form>
-              </div>
-              <div class="col-md-6">
-                <label for="skugen">SKU GENERADO</label>
-                <input type="text" class="form-control" id="skugen" name="skugen" value="{{ sku }}" required readonly>
+            </div>
+            <div class="col-md-6">
+              <label for="skugen">SKU GENERADO</label>
+              <input type="text" class="form-control" id="skugen" name="skugen" value="{{ sku }}" required readonly>
             </div>
           </div>
         </div>
