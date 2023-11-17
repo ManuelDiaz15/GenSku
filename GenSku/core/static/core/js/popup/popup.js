@@ -35,7 +35,3 @@ function validarFormulario() {
       document.getElementById("skuForm").submit();
     }
   }
-
-  function validarNumero(input) {
-    // Puedes agregar lógica de validación específica para el campo numérico si es necesario.
-  }

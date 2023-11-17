@@ -11,6 +11,9 @@ def services(request):
 def history(request):
     return render (request, "core/history.html")
 
+def update_sku(request):
+    return render (request, "core/update_sku.html")
+
 def create_sku(request):
     if request.method == 'POST':
         # Obtener los datos del formulario
